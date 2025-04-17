@@ -1,0 +1,16 @@
+/*!
+Theme Name: Тестовая v.1
+Author: Первый попавшийся блоггер с информацией по WP для решения тестового задания в рунете
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: fast-vid
+
+ЭТОТ ФАЙЛ НЕ УДАЛЯТЬ И КОММЕНТАРИИ НЕ СТИРАТЬ
+*/
+
+.error404 {
+  font-size: 30px;
+}
