@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e3b1d385-eea1-412c-b376-744535d24b24" name="kicks-town">
+        <fileTransfer rootFolder="/home/c100552/kick-town.na4u.ru/www/wp-content/themes/fast-vid" accessType="SFTP" host="91.201.52.20" port="22" sshConfigId="4bbc90d0-48bd-4a89-a805-ca49e92e2bb4" sshConfig="c100552@91.201.52.20:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

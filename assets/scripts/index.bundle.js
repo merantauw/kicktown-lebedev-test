@@ -40,26 +40,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const beforeAfter = divider.parentElement;
     let isDragging = false;
 
-    divider.addEventListener('mousedown', () => {
-        isDragging = true;
-    });
+    const getXPosition = (event) => {
+        if (event.type.includes('touch')) {
+            return event.touches[0].clientX;
+        }
+        return event.clientX;
+    };
 
-    document.addEventListener('mousemove', (e) => {
+    const startDragging = () => {
+        isDragging = true;
+    };
+
+    const handleMove = (e) => {
         if (!isDragging) return;
 
         const rect = beforeAfter.getBoundingClientRect();
-        let offsetX = e.clientX - rect.left;
+        let offsetX = getXPosition(e) - rect.left;
         let percentage = (offsetX / rect.width) * 100;
 
         percentage = Math.max(0, Math.min(100, percentage));
         beforeAfter.style.setProperty('--clip-position', `${percentage}%`);
-
         divider.style.left = `${percentage}%`;
-    });
+    };
 
-    document.addEventListener('mouseup', () => {
+    const stopDragging = () => {
         isDragging = false;
-    });
+    };
+
+    divider.addEventListener('mousedown', startDragging);
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', stopDragging);
+
+    divider.addEventListener('touchstart', startDragging);
+    document.addEventListener('touchmove', handleMove, { passive: false });
+    document.addEventListener('touchend', stopDragging);
 });
 /* Блок до-после в секции hero */
 
